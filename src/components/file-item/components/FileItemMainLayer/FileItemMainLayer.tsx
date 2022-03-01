@@ -1,7 +1,7 @@
 import React, { FC, Fragment, useEffect, useState } from "react";
 //import { FileItemProps } from "../FileItem/FileItemProps";
 import FileItemStatus from "../FileItemStatus/FileItemStatus";
-import { PlayIcon,Cancel, Visibility, Info } from "../../../icons";
+import { PlayIcon,Cancel, Visibility,Edit, Info } from "../../../icons";
 import { Localization } from "../../../../localization/localization";
 //import {shrinkWord} from "./../../utils";
 export interface FileItemMainLayerProps {
@@ -132,6 +132,16 @@ const FileItemMainLayer: FC<FileItemMainLayerProps> = (
               {!onlyImage && (
                 <div className={"file-item-size"}>{sizeFormatted}</div>
               )}
+              
+               {isImage && onOpenImage && valid && (
+                <Edit
+                  className="edit-in-image-file-item"
+                  color="rgba(255,255,255,0.9)"
+                  onClick={handleEditImage}
+                  size="small"
+                />
+              )}
+              
 
               {isImage && onOpenImage && valid && (
                 <Visibility
