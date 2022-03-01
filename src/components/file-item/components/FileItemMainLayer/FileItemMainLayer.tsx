@@ -1,7 +1,7 @@
 import React, { FC, Fragment, useEffect, useState } from "react";
 //import { FileItemProps } from "../FileItem/FileItemProps";
 import FileItemStatus from "../FileItemStatus/FileItemStatus";
-import { PlayIcon,Cancel, Visibility,Edit, Info } from "../../../icons";
+import { PlayIcon,Cancel, Visibility, Edit, Info } from "../../../icons";
 import { Localization } from "../../../../localization/localization";
 //import {shrinkWord} from "./../../utils";
 export interface FileItemMainLayerProps {
@@ -49,6 +49,7 @@ const FileItemMainLayer: FC<FileItemMainLayerProps> = (
     onlyImage,
     onOpenInfo,
     onOpenImage,
+    onEditImage,
     onOpenVideo,
     sizeFormatted,
     uploadStatus,
@@ -63,6 +64,9 @@ const FileItemMainLayer: FC<FileItemMainLayerProps> = (
   };
   const handleOpenImage = () => {
     onOpenImage?.();
+  };
+  const handleEditImage = () => {
+  onEditImage?.();
   };
   const handleOpenVideo =()=>{
     onOpenVideo?.();
